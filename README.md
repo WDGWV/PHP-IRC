@@ -45,10 +45,10 @@
 
 PHP IRC SERVER (PHP-IRC)
 =====
-======
 Info
 =
 This will become a PHP Irc server, with built in services.
+
 More info? http://wdgwv.github.io/PHP-irc.html
 
 =====
