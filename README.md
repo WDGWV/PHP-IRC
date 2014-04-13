@@ -45,24 +45,29 @@
 
 PHP IRC SERVER (PHP-IRC)
 =====
-=Info=
-
+======
+Info
+=
 This will become a PHP Irc server, with built in services.
 More info? http://wdgwv.github.io/PHP-irc.html
 
 =====
-=Known bugs=
+Known bugs
+=
 	* NONE
 
 =====
-=Limitations=
+Limitations
+=
 
 Feel free to copy/modify this software, you can fork, or submit a pull request.
 Do not remove the WDGWV Texts. (yes you may add you've helped with the software!)
 
 =====
-=Last note=
+Last note
+=
 
 -- Have fun!
 Wesley de Groot, CEO of WDGWV.
+
 http://www.wdgwv.com
