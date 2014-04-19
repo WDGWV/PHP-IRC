@@ -1,0 +1,25 @@
+USER Wesley Wesley Wesley :Wesley
+:PHPIrc 001 Wesley :Welcome to the PHPIrcServer IRC Network Wesley!Wesley@At.PHPIrc
+:PHPIrc 002 Wesley :Your host is PHPIrcServer, running version PHPIrc 0.0.1
+:PHPIrc 003 Wesley :This server was created Wed Jan 30 2013 at 21:16:57 CET
+:PHPIrc 004 Wesley PHPIrc Unreal3.2.10 iowghraAsORTVSxNCWqBzvdHtGpID lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+:PHPIrc 005 Wesley CMDS=KNOCK,MAP,DCCALLOW,USERIP,STARTTLS UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:500,e:500,I:500 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+:PHPIrc 005 Wesley MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=PHPIrc CASEMAPPING=ascii EXTBAN=~,qjncrRa ELIST=MNUCT :are supported by this server
+:PHPIrc 005 Wesley STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+:PHPIrc 251 Wesley :There are 1 users and 422 invisible on 5 servers
+:PHPIrc 252 Wesley 53 :operator(s) online
+:PHPIrc 254 Wesley 190 :channels formed
+:PHPIrc 255 Wesley :I have 114 clients and 1 servers
+:PHPIrc 265 Wesley 114 207 :Current local users 114, max 207
+:PHPIrc 266 Wesley 423 2200 :Current global users 423, max 2200
+:PHPIrc 375 Wesley :- PHPIrc Message of the Day - 
+:PHPIrc 372 Wesley :- 8/3/2014 13:05
+:PHPIrc 372 Wesley :- Laatste aanpassing op 8/3/2014 @ 13:13
+:PHPIrc 376 Wesley :End of /MOTD command.
+:Wesley MODE Wesley :+iwx
+:Global!services@PHPIrc NOTICE Wesley :Follow @WDGWV
+JOIN #x
+:Wesley!Wesley@At.PHPIrc JOIN :#x
+:PHPIrc MODE #x +nt 
+:PHPIrc 353 Wesley = #x :@Wesley 
+:PHPIrc 366 Wesley #x :End of /NAMES list.

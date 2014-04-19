@@ -69,16 +69,28 @@ more info? http://wdgwv.github.io/PHP-irc.html
 	## END OF DISCLAIMER // INFO ##
 */
 
+error_reporting(E_ALL);
+
 include_once 'Config/config.php';
 include_once 'Init/config.php';
 include_once 'Init/define.php';
-include_once INIT . 'splash.php';
+include_once INIT  . 'splash.php';
 include_once FUNCS . 'rLog.php';
 include_once FUNCS . 'tryToCreateServer.php';
+include_once FUNCS . 'commands.php';
+
+function socket_write_($sock, $cmd)
+{
+	rLog("=> {$cmd}");
+	socket_write($sock, $cmd);
+}
+
+$last = null;
 
 rLog("Server started at ".$host.":".$port);
 // Server loop
-while(true){
+while(true)
+{
              socket_set_block($sock);
              // Setup clients listen socket for reading
 
@@ -97,12 +109,24 @@ while(true){
              {
                           for($i = 0;$i<$max;$i++)
                           {
-                                       if($client[$i]['sock']==null)
+                                       if(@$client[$i]['sock']==null)
                                        {
-                                                    if(($client[$i]['sock'] = socket_accept($sock))<0){
-                                                                 rLog("socket_accept() failed: ".socket_strerror($client[$i]['sock']));
+                                                    if((@$client[$i]['sock'] = socket_accept($sock))<0){
+                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$i]['sock']));
                                                     }else{
                                                                  rLog("Client #".$i." connected");
+                                                                 /*
+                                                                 :irc3.chattersweb.nl NOTICE AUTH :*** Looking up your hostname...
+																 :irc3.chattersweb.nl NOTICE AUTH :*** Found your hostname
+																 */
+																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
+																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***         Welcome by PHP Irc.                 ***\r\n");
+																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** © WDGWV, All Rights Reserved, www.wdgwv.com ***\r\n");
+																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
+																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH : \r\n");
+                                                                 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Looking up your hostname...\r\n");
+                                                                 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Found your hostname\r\n");
+
                                                     }
                                                     break;
                                        }
@@ -110,7 +134,7 @@ while(true){
                                        {													
 													if( ( $client[$max]['sock'] = socket_accept($sock) ) < 0 )
 													{
-                                                                 rLog("socket_accept() failed: ".socket_strerror($client[$mac]['sock']));
+                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$mac]['sock']));
                                                     }
                                                     else
                                                     {
@@ -127,6 +151,7 @@ while(true){
                           if(--$ready <= 0)
                           continue;
              }
+             
              for($i=0;$i<$max;$i++)
              {
                           if(in_array(@$client[$i]['sock'],$read))
@@ -136,84 +161,31 @@ while(true){
                                        {
                                             unset($client[$i]);
                                        }
-                                       $input = preg_replace("(\r|\n|\r\n|\n\r)", null, $input);
-                                       $n     = trim ( $input  );
-                                       $com   = explode( " ", $input );
-                                       $n     = $com[0];
+                                       $real_input = $input;
 
-                                       rLog("{$i} Says: {$com[0]}.");
-                                       print_r($com);
+                                       $f = explode("\r\n", $input);
+                                       for($r=0; $r<sizeof($f); $r++)
+                                       {
+                                       	if(!is_null($f[$r]))
+                                       	{
+                                       		if ($last != $i.'/'.$f[$r])
+                                       		{
 
-                                       if($n=="EXIT")
-                                       {
-                                            if($client[$i]['sock']!=null)
-                                            {
-                                                // Disconnect requested
-                                                socket_close($client[$i]['sock']);
-                                                unset($client[$i]['sock']);
-                                                rLog("Disconnected(2) client #".$i);
-                                                for($p=0;$p<count($client);$p++)
-                                                {
-                                                	socket_write($client[$p]['sock'],"DISC ".$i.chr(0));
-                                                }
-                                                if($i == $adm)
-                                                {
-                                                	$adm = -1;
-                                                }
-                                            }
-                                       }
-                                       elseif($com[0] == "ME")
-                                       {
-                                       	rLog('ME CALLED');
+                                       			rLog("{$i} Says: {$f[$r]}.");
 
-                                                    // Server termination requested
-                                       				if(isset($com[1]))
-                                       				{
-                                       					rLog("#{$i} is {$com[1]}");
-                                       					$names[$i] = $com[1];
-                                       				}
-                                       				else
-                                       				{
-                                       					if (isset($names[$i]))
-                                       						socket_write($client[$i]['sock'], '999 ' . $names[$i] . PHP_EOL);
-                                       					else
-                                       						socket_write($client[$i]['sock'], '999 UNKNOWN' . PHP_EOL);	
-                                       				}
-                                       }
-                                       elseif($n=="GLOBAL")
-                                       {
-                                                    // Server termination requested
-                                       				rLog("GLOBAL MESSAGE BY #{$i}");
-                          							for($i_i = 0;$i_i<$max;$i_i++)
-                                       				{
-                                       					socket_write($client[$i_i]['sock'], "TEST FOR GLOBAL MESSAGES..." . PHP_EOL);
-                                       				}
+                                       			commands (
+                                       						$command = $f[$r], 
+                                       						$socket  = $client[$i]['sock']
+                                       					 );
 
+                                       			$last = $i.'/'.$f[$r];
+                                       		}
+                                       	}
                                        }
-                                       elseif($n=="TERM"){
-                                                    // Server termination requested
-                                                    socket_close($sock);
-                                                    rLog("Terminated server (requested by client #".$i.")");
-                                                    exit();
-                                       }
-                                       elseif($input)
-                                       {
-                                                    // Strip whitespaces and write back to user
-                                                    // Respond to commands
-                                                    /*$output = ereg_replace("[ \t\n\r]","",$input).chr(0);
-                                                    socket_write($client[$i]['sock'],$output);*/
-                                                    if($n=="PING"){
-                                                                 socket_write($client[$i]['sock'],"PONG".chr(0));
-                                                    }
-                                                    if($n=="<policy-file-request/>"){
-                                                                 rLog("Client #".$i." requested a policy file...");
-                                                                 $cdmp="<?xml version=\"1.0\" encoding=\"UTF-8\"?><cross-domain-policy xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.adobe.com/xml/schemas/PolicyFileSocket.xsd\"><allow-access-from domain=\"*\" to-ports=\"*\" secure=\"false\" /><site-control permitted-cross-domain-policies=\"master-only\" /></cross-domain-policy>";
-                                                                 socket_write($client[$i]['sock'],$cdmp.chr(0));
-                                                                 socket_close($client[$i]['sock']);
-                                                                 unset($client[$i]);
-                                                                 $cdmp="";
-                                                    }
-                                       }
+                                       //$input = preg_replace("(\r|\n|\r\n|\n\r)", null, $input);
+                                       //$n     = trim ( $input  );
+                                       //$com   = explode( " ", $input );
+                                       //$n     = $com[0];
                           }
                           else
                           {
