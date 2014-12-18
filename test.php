@@ -82,7 +82,7 @@ include_once FUNCS . 'commands.php';
 function socket_write_($sock, $cmd)
 {
 	rLog("=> {$cmd}");
-	socket_write(@$sock, $cmd);
+	@socket_write(@$sock, $cmd);
 }
 
 $last = null;

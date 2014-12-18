@@ -15,6 +15,7 @@ function commands ($command, $socket)
     $n     		= $com[0];
 
 	include CMD . 'exit.php';
+	include CMD . 'ping.php';
 	// DO NOT PUT A COMMAND ABOVE THIS..
 	include CMD . 'nick.php';
 	include CMD . 'me.php';
