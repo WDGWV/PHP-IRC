@@ -87,7 +87,7 @@ function socket_write_($sock, $cmd)
 
 $last = null;
 
-rLog("Server started at ".$host.":".$port);
+rLog("Server started at ".$host.":".$port . SPACES . "\r\n");
 // Server loop
 while(true)
 {
@@ -112,21 +112,26 @@ while(true)
                                        if(@$client[$i]['sock']==null)
                                        {
                                                     if((@$client[$i]['sock'] = socket_accept($sock))<0){
-                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$i]['sock']));
+                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$i]['sock'])."\r\n");
                                                     }else{
-                                                                 rLog("Client #".$i." connected");
-                                                                 /*
-                                                                 :irc3.chattersweb.nl NOTICE AUTH :*** Looking up your hostname...
-																 :irc3.chattersweb.nl NOTICE AUTH :*** Found your hostname
-																 */
-																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
-																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***         Welcome by PHP Irc.                 ***\r\n");
-																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** © WDGWV, All Rights Reserved, www.wdgwv.com ***\r\n");
-																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
-																 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH : \r\n");
-                                                                 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Looking up your hostname...\r\n");
-                                                                 socket_write($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Found your hostname\r\n");
+                                                                 rLog("Client #".$i." connected\r\n");
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***         Welcome by PHP Irc.                 ***\r\n");
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** © WDGWV, All Rights Reserved, www.wdgwv.com ***\r\n");
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :***************************************************\r\n");
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH : \r\n");
+                                                                 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Looking up your hostname...\r\n");
+                                                                 #IFFOUND....
+																
 
+                                                                 $theIP = socket_getpeername ( $client[$i]['sock'] , $theHost , $thePort );
+																 socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Found your IP Adress ({$theHost} @ {$thePort})\r\n");
+
+																 if ($hostname=gethostbyaddr($theHost))
+                                                                 	{
+                                                                 		socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Found your hostname  ($hostname)\r\n");
+                                                                 		//socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Coded Hostname       ($hostname)\r\n");
+                                                                 	}
                                                     }
                                                     break;
                                        }
@@ -134,16 +139,16 @@ while(true)
                                        {													
 													if( ( $client[$max]['sock'] = socket_accept($sock) ) < 0 )
 													{
-                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$mac]['sock']));
+                                                                 rLog("socket_accept() failed: ".socket_strerror(@$client[$mac]['sock']) . "\r\n");
                                                     }
                                                     else
                                                     {
-                                                                 rLog("Client #".$max." rejected");
+                                                                 rLog("Client #".$max." rejected" . "\r\n");
                                                     }
                                                     //killing the last...
                                                     $cdmp="ERROR: #001 To much clients. Please try later\r\n";
 
-                                                    socket_write($client[$max]['sock'],$cdmp);
+                                                    socket_write_($client[$max]['sock'],$cdmp);
                                                     socket_close($client[$max]['sock']);
                                                     unset($client[$max]['sock']);
                                        }
@@ -168,17 +173,18 @@ while(true)
                                        {
                                        	if(!is_null($f[$r]))
                                        	{
-                                       		if ($last != $i.'/'.$f[$r])
+                                       		if ($last != $i . '/' . $f[$r] &&
+                                       			!empty($f[$r]))
                                        		{
 
-                                       			rLog("{$i} Says: {$f[$r]}.");
+                                       			rLog("{$i} Says: {$f[$r]}.\r\n");
 
                                        			commands (
                                        						$command = $f[$r], 
                                        						$socket  = $client[$i]['sock']
                                        					 );
 
-                                       			$last = $i.'/'.$f[$r];
+                                       			$last = $i . '/' . $f[$r];
                                        		}
                                        	}
                                        }

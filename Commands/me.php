@@ -14,9 +14,9 @@ if($com[0] == "ME")
 	else
 	{
 		if (isset($names[$i]))
-			socket_write($client[$i]['sock'], '999 ' . $names[$i] . PHP_EOL);
+			socket_write_($client[$i]['sock'], '999 ' . $names[$i] . PHP_EOL);
 		else
-			socket_write($client[$i]['sock'], '999 UNKNOWN' . PHP_EOL);	
+			socket_write_($client[$i]['sock'], '999 UNKNOWN' . PHP_EOL);	
 	}
 }
 ?>

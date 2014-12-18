@@ -1,6 +1,7 @@
 <?php
 if ( $com[0] == "JOIN" )
 {
+	global $host;
 	rLog("JOIN CHANNEL" . PHP_EOL);
 	if ( !isset ( $nicks['pid_' . $i] ) )
 	{
@@ -18,10 +19,18 @@ if ( $com[0] == "JOIN" )
 		*/
 		
 		socket_write_($socket, $c = (":".$nick." JOIN " . $com[1]) );
+		#B0P's B0T H@ bop@playing.with.my.pet.IRCop.com :5 B0P's B0T - http://mirc-egg.net
+		socket_write_($socket, $com[1] . " {$nick} {$nick} {$nick}@PHP.IRC :0 {$nick}{$nick}" . PHP_EOL );
 
-		socket_write_($socket, ":PHPIrc MODE " . $com[1] . " +nt " . PHP_EOL );
-		socket_write_($socket, ":PHPIrc 353 {$nick} = " . $com[1] . " :@{$nick} " . PHP_EOL );
-		socket_write_($socket, ":PHPIrc 366 {$nick} = " . $com[1] . " :End of /NAMES list." . PHP_EOL );
+		#Topic
+		socket_write_($socket, "332 {$com[1]} : http://www.wdgwv.com" . PHP_EOL );
+		socket_write_($socket, "333 {$com[1]} Global 902508764" . PHP_EOL );
+		socket_write_($socket, ":Global MODE " . $com[1] . " +ntr" . PHP_EOL );
+
+		//socket_write_($socket, "353 = " . $com[1] . " :@{$nick}" . PHP_EOL );
+		//socket_write_($socket, "366 = " . $com[1] . " :End of /NAMES list." . PHP_EOL );
+
+
 
 		rLog("JOIN {$c}" . PHP_EOL);
 	}

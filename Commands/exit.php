@@ -14,7 +14,7 @@ if ( $com[0] == "EXIT" )
 
 		for($p=0; $p<count($client); $p++)
 		{
-			socket_write(
+			socket_write_(
 							$client[$p]['sock'],
 							"DISC " . $i . chr(0)
 						);

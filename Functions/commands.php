@@ -20,6 +20,7 @@ function commands ($command, $socket)
 	include CMD . 'me.php';
 	include CMD . 'join.php';
 
+	include CMD . 'raw.php';
 	include CMD . 'term.php';
 
 	include CMD . 'global.php';
