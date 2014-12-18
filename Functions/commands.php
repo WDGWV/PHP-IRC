@@ -1,7 +1,7 @@
 <?php
 function notRegistered ( $socket )
 {
-	socket_write($socket, ":PHPIrc 451 :You have not registered" . PHP_EOL);
+	socket_write_(@$socket, ":PHPIrc 451 :You have not registered" . PHP_EOL);
 }
 
 function commands ($command, $socket)

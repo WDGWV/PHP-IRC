@@ -25,7 +25,7 @@ if ( $com[0] == "JOIN" )
 		#Topic
 		socket_write_($socket, "332 {$com[1]} : http://www.wdgwv.com" . PHP_EOL );
 		socket_write_($socket, "333 {$com[1]} Global 902508764" . PHP_EOL );
-		socket_write_($socket, ":Global MODE " . $com[1] . " +ntr" . PHP_EOL );
+		socket_write_($socket, ":Global!services@PHPIrc MODE " . $com[1] . " +ntr" . PHP_EOL );
 
 		//socket_write_($socket, "353 = " . $com[1] . " :@{$nick}" . PHP_EOL );
 		//socket_write_($socket, "366 = " . $com[1] . " :End of /NAMES list." . PHP_EOL );

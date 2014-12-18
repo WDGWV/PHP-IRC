@@ -5,7 +5,7 @@
 function tryToCreateServer($error = false)
 {
 	global $sock, $host, $port;
-	$WWE = false;
+	$WWE = true;
 
 	if ( $error != false )
 	{

@@ -15,7 +15,7 @@ if ( $com[0] == "RAW" )
 		$comm = $com;unset($comm[0]);$comm=implode(" ", $comm);
 		socket_write_($socket, $comm . PHP_EOL );
 
-		rLog("RAW {$comm}" . PHP_EOL);
+		rLog("*** RAW {$comm}" . PHP_EOL);
 	}
 }
 
