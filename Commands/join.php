@@ -35,7 +35,7 @@ if ( $com[0] == "JOIN" )
 		:PHPIrc 366 Wesley #x :End of /NAMES list.
 		*/
 		
-		socket_write_($socket, $c = (":".$nick." JOIN " . $com[1]) );
+		socket_write_($socket, $c = (":".$nick." JOIN " . $com[1]) . PHP_EOL);
 		#B0P's B0T H@ bop@playing.with.my.pet.IRCop.com :5 B0P's B0T - http://mirc-egg.net
 		socket_write_($socket, $com[1] . " {$nick} {$nick} {$nick}@PHP.IRC :0 {$nick}{$nick}" . PHP_EOL );
 
