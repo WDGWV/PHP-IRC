@@ -82,7 +82,11 @@ include_once FUNCS . 'commands.php';
 function socket_write_($sock, $cmd)
 {
 	rLog("=> {$cmd}");
+<<<<<<< HEAD
 	socket_write($sock, $cmd);
+=======
+	@socket_write(@$sock, $cmd);
+>>>>>>> 8254efd1ac68b65168466cc98716be13a4296b0b
 }
 
 $last = null;
@@ -130,7 +134,13 @@ while(true)
 																 if ($hostname=gethostbyaddr($theHost))
                                                                  	{
                                                                  		socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Found your hostname  ($hostname)\r\n");
+<<<<<<< HEAD
                                                                  		//socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Coded Hostname       ($hostname)\r\n");
+=======
+                                                                 		$encHost = base64_encode($hostname);
+                                                                 		$encHost = preg_replace("/=/", "_", $encHost);
+                                                                 		socket_write_($client[$i]['sock'], ":PHPIrc NOTICE AUTH :*** Coded Hostname       ($encHost)\r\n");
+>>>>>>> 8254efd1ac68b65168466cc98716be13a4296b0b
                                                                  	}
                                                     }
                                                     break;
@@ -146,11 +156,19 @@ while(true)
                                                                  rLog("Client #".$max." rejected" . "\r\n");
                                                     }
                                                     //killing the last...
+<<<<<<< HEAD
                                                     $cdmp="ERROR: #001 To much clients. Please try later\r\n";
 
                                                     socket_write_($client[$max]['sock'],$cdmp);
                                                     socket_close($client[$max]['sock']);
                                                     unset($client[$max]['sock']);
+=======
+                                                    $cdmp = "ERROR: #001 To much clients. Please try later\r\n";
+
+                                                    socket_write_ ( $client[$max]['sock'], $cdmp );
+                                                    socket_close  ( $client[$max]['sock'] );
+                                                    unset         ( $client[$max]['sock'] );
+>>>>>>> 8254efd1ac68b65168466cc98716be13a4296b0b
                                        }
                           }
                           if(--$ready <= 0)

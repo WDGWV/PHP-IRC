@@ -16,7 +16,7 @@ if ( $com[0] == "JOIN" )
 		:PHPIrc MODE #x +nt 
 		:PHPIrc 353 Wesley = #x :@Wesley 
 		:PHPIrc 366 Wesley #x :End of /NAMES list.
-		
+
 		....
 		JOIN #W2,#x
 		MODE #W2,#x

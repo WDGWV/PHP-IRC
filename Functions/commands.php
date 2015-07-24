@@ -1,7 +1,7 @@
 <?php
 function notRegistered ( $socket )
 {
-	socket_write($socket, ":PHPIrc 451 :You have not registered" . PHP_EOL);
+	socket_write_(@$socket, ":PHPIrc 451 :You have not registered" . PHP_EOL);
 }
 
 function commands ($command, $socket)
@@ -15,6 +15,8 @@ function commands ($command, $socket)
     $n     		= $com[0];
 
 	include CMD . 'exit.php';
+	include CMD . 'ping.php';
+
 	// DO NOT PUT A COMMAND ABOVE THIS..
 	include CMD . 'nick.php';
 	include CMD . 'me.php';
