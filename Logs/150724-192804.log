@@ -1,0 +1,87 @@
+[2015-07-24 19:28:04] Server started at 127.0.0.1:6667                      
+[2015-07-24 19:28:44] Client #0 connected
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :***************************************************
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :***         Welcome by PHP Irc.                 ***
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :*** © WDGWV, All Rights Reserved, www.wdgwv.com ***
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :***************************************************
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH : 
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :*** Looking up your hostname...
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :*** Found your IP Adress (127.0.0.1 @ 54741)
+[2015-07-24 19:28:44] => :PHPIrc NOTICE AUTH :*** Found your hostname  (localhost)
+[2015-07-24 19:28:45] 0 Says: CAP LS 302.
+[2015-07-24 19:28:45] 0 Says: NICK W3S.
+[2015-07-24 19:28:45] NICK[2015-07-24 19:28:45] => PING :PHPIrc
+[2015-07-24 19:28:45] => :PHPIrc 001 W3S :Welcome to the PHPIrcServer IRC Network W3S!W3S@At.PHPIrc
+[2015-07-24 19:28:45] => :PHPIrc 002 W3S :Your host is PHPIrcServer, running version PHPIrc 0.0.1
+[2015-07-24 19:28:45] => :PHPIrc 003 W3S :This server was created Wed Jan 30 2013 at 21:16:57 CET
+[2015-07-24 19:28:45] => :PHPIrc 004 W3S PHP Irc0.0.1 iowghraAsORTVSxNCWqBzvdHtGpID lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+[2015-07-24 19:28:45] => :PHPIrc 005 W3S CMDS=KNOCK,MAP,DCCALLOW,USERIP,STARTTLS UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:500,e:500,I:500 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+[2015-07-24 19:28:45] => :PHPIrc 005 W3S MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=PHPIrc CASEMAPPING=ascii EXTBAN=~,qjncrRa ELIST=MNUCT :are supported by this server
+[2015-07-24 19:28:45] => :PHPIrc 005 W3S STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+[2015-07-24 19:28:45] => :PHPIrc 251 W3S :There are 1 users and 422 invisible on 5 servers
+[2015-07-24 19:28:45] => :PHPIrc 252 W3S 53 :operator(s) online
+[2015-07-24 19:28:45] => :PHPIrc 254 W3S 190 :channels formed
+[2015-07-24 19:28:45] => :PHPIrc 255 W3S :I have 114 clients and 1 servers
+[2015-07-24 19:28:45] => :PHPIrc 265 W3S 114 207 :Current local users 114, max 207
+[2015-07-24 19:28:45] => :PHPIrc 266 W3S 423 2200 :Current global users 423, max 2200
+[2015-07-24 19:28:45] => :PHPIrc 375 W3S :- PHPIrc Message of the Day - 
+[2015-07-24 19:28:45] => :PHPIrc 372 W3S :- 8/3/2014 13:05
+[2015-07-24 19:28:45] => :PHPIrc 372 W3S :- Laatste aanpassing op 8/3/2014 @ 13:13
+[2015-07-24 19:28:45] => :PHPIrc 376 W3S :End of /MOTD command.
+[2015-07-24 19:28:45] => :W3S MODE W3S :+iwx
+[2015-07-24 19:28:45] => :Global!services@PHPIrc NOTICE W3S :Follow @WDGWV
+[2015-07-24 19:28:45] 0 Says: USER W3S 0 * :WDG.
+[2015-07-24 19:28:45] 0 Says: PONG PHPIrc.
+[2015-07-24 19:28:45] 0 Says: JOIN #W2,#x.
+[2015-07-24 19:28:45] JOIN CHANNEL
+[2015-07-24 19:28:45] => :W3S JOIN #W2,#x
+[2015-07-24 19:28:45] => #W2,#x W3S W3S W3S@PHP.IRC :0 W3SW3S
+[2015-07-24 19:28:45] => 332 #W2,#x :http://www.wdgwv.com
+[2015-07-24 19:28:45] => 333 #W2,#x Global 902508764
+[2015-07-24 19:28:45] => :Global MODE #W2,#x +ntr
+[2015-07-24 19:28:45] JOIN :W3S JOIN #W2,#x
+
+[2015-07-24 19:28:45] 0 Says: PROTOCTL UHNAMES.
+[2015-07-24 19:28:45] 0 Says: PROTOCTL NAMESX.
+[2015-07-24 19:28:45] 0 Says: MODE #W2,#x.
+[2015-07-24 19:28:55] 0 Says: JOIN #W2.
+[2015-07-24 19:28:55] JOIN CHANNEL
+[2015-07-24 19:28:55] => :W3S JOIN #W2
+[2015-07-24 19:28:55] => #W2 W3S W3S W3S@PHP.IRC :0 W3SW3S
+[2015-07-24 19:28:55] => 332 #W2 :http://www.wdgwv.com
+[2015-07-24 19:28:55] => 333 #W2 Global 902508764
+[2015-07-24 19:28:55] => :Global MODE #W2 +ntr
+[2015-07-24 19:28:55] JOIN :W3S JOIN #W2
+
+[2015-07-24 19:28:55] 0 Says: MODE #W2.
+[2015-07-24 19:28:58] 0 Says: JOIN #x.
+[2015-07-24 19:28:58] JOIN CHANNEL
+[2015-07-24 19:28:58] => :W3S JOIN #x
+[2015-07-24 19:28:58] => #x W3S W3S W3S@PHP.IRC :0 W3SW3S
+[2015-07-24 19:28:58] => 332 #x :http://www.wdgwv.com
+[2015-07-24 19:28:58] => 333 #x Global 902508764
+[2015-07-24 19:28:58] => :Global MODE #x +ntr
+[2015-07-24 19:28:58] JOIN :W3S JOIN #x
+
+[2015-07-24 19:28:58] 0 Says: MODE #x.
+[2015-07-24 19:29:25] 0 Says: WHO #W2.
+[2015-07-24 19:29:25] 0 Says: WHO #x.
+[2015-07-24 19:29:25] 0 Says: WHO #W2,#x.
+[2015-07-24 19:29:55] 0 Says: WHO #W2.
+[2015-07-24 19:29:55] 0 Says: WHO #x.
+[2015-07-24 19:29:55] 0 Says: WHO #W2,#x.
+[2015-07-24 19:30:25] 0 Says: WHO #W2.
+[2015-07-24 19:30:25] 0 Says: WHO #x.
+[2015-07-24 19:30:25] 0 Says: WHO #W2,#x.
+[2015-07-24 19:30:55] 0 Says: WHO #W2.
+[2015-07-24 19:30:55] 0 Says: WHO #x.
+[2015-07-24 19:30:55] 0 Says: WHO #W2,#x.
+[2015-07-24 19:31:25] 0 Says: WHO #W2.
+[2015-07-24 19:31:25] 0 Says: WHO #x.
+[2015-07-24 19:31:25] 0 Says: WHO #W2,#x.
+[2015-07-24 19:31:55] 0 Says: WHO #W2.
+[2015-07-24 19:31:55] 0 Says: WHO #x.
+[2015-07-24 19:31:55] 0 Says: WHO #W2,#x.
+[2015-07-24 19:32:25] 0 Says: WHO #W2.
+[2015-07-24 19:32:25] 0 Says: WHO #x.
+[2015-07-24 19:32:25] 0 Says: WHO #W2,#x.

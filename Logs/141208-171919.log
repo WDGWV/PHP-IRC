@@ -1,0 +1,43 @@
+[2014-12-08 17:19:19] Server started at 127.0.0.1:6667                      
+[2014-12-08 17:19:51] Client #0 connected
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :***************************************************
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :***         Welcome by PHP Irc.                 ***
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :*** © WDGWV, All Rights Reserved, www.wdgwv.com ***
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :***************************************************
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH : 
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :*** Looking up your hostname...
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :*** Found your IP Adress (127.0.0.1 @ 62103)
+[2014-12-08 17:19:51] => :PHPIrc NOTICE AUTH :*** Found your hostname  (localhost)
+[2014-12-08 17:19:51] 0 Says: PASS Wes1/GC:wtc2001.
+[2014-12-08 17:19:51] 0 Says: CAP LS.
+[2014-12-08 17:19:51] 0 Says: NICK Wes.
+[2014-12-08 17:19:51] NICK[2014-12-08 17:19:51] => PING :PHPIrc
+[2014-12-08 17:19:51] => :PHPIrc 001 Wes :Welcome to the PHPIrcServer IRC Network Wes!Wes@At.PHPIrc
+[2014-12-08 17:19:51] => :PHPIrc 002 Wes :Your host is PHPIrcServer, running version PHPIrc 0.0.1
+[2014-12-08 17:19:51] => :PHPIrc 003 Wes :This server was created Wed Jan 30 2013 at 21:16:57 CET
+[2014-12-08 17:19:51] => :PHPIrc 004 Wes PHP Irc0.0.1 iowghraAsORTVSxNCWqBzvdHtGpID lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+[2014-12-08 17:19:51] => :PHPIrc 005 Wes CMDS=KNOCK,MAP,DCCALLOW,USERIP,STARTTLS UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:500,e:500,I:500 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 :are supported by this server
+[2014-12-08 17:19:51] => :PHPIrc 005 Wes MAXTARGETS=20 WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=PHPIrc CASEMAPPING=ascii EXTBAN=~,qjncrRa ELIST=MNUCT :are supported by this server
+[2014-12-08 17:19:51] => :PHPIrc 005 Wes STATUSMSG=~&@%+ EXCEPTS INVEX :are supported by this server
+[2014-12-08 17:19:51] => :PHPIrc 251 Wes :There are 1 users and 422 invisible on 5 servers
+[2014-12-08 17:19:51] => :PHPIrc 252 Wes 53 :operator(s) online
+[2014-12-08 17:19:51] => :PHPIrc 254 Wes 190 :channels formed
+[2014-12-08 17:19:51] => :PHPIrc 255 Wes :I have 114 clients and 1 servers
+[2014-12-08 17:19:51] => :PHPIrc 265 Wes 114 207 :Current local users 114, max 207
+[2014-12-08 17:19:51] => :PHPIrc 266 Wes 423 2200 :Current global users 423, max 2200
+[2014-12-08 17:19:51] => :PHPIrc 375 Wes :- PHPIrc Message of the Day - 
+[2014-12-08 17:19:51] => :PHPIrc 372 Wes :- 8/3/2014 13:05
+[2014-12-08 17:19:51] => :PHPIrc 372 Wes :- Laatste aanpassing op 8/3/2014 @ 13:13
+[2014-12-08 17:19:51] => :PHPIrc 376 Wes :End of /MOTD command.
+[2014-12-08 17:19:51] => :Wes MODE Wes :+iwx
+[2014-12-08 17:19:51] => :Global!services@PHPIrc NOTICE Wes :Follow @WDGWV
+[2014-12-08 17:19:51] 0 Says: USER Wes Wes 127.0.0.1 :Wesley de Groot.
+[2014-12-08 17:19:51] 0 Says: .
+[2014-12-08 17:19:51] 0 Says: PONG :PHPIrc.
+[2014-12-08 17:19:51] 0 Says: .
+[2014-12-08 17:19:51] 0 Says: PROTOCTL NAMESX.
+[2014-12-08 17:19:51] 0 Says: .
+[2014-12-08 17:19:52] 0 Says: WATCH +Mariska +patrickekkel +Chloe +DevilShadow[L]Aapje +Trust +DMG-SAN.
+[2014-12-08 17:19:52] 0 Says: .
+[2014-12-08 17:19:55] 0 Says: PING LAG1418009195046286.
+[2014-12-08 17:19:55] 0 Says: .
